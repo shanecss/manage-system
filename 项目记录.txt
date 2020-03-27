@@ -19,5 +19,49 @@
     <style scoped lang="scss">
  
     </style>
-3.在vue中使用sass
-    
+3.使用sass
+    a.不论是你使用的less或者sass都需要下载sass-resources-loader包,npm命令如下:npm install sass-resources-loader --save-dev
+    在.eleectron-vue/webpack.renderer.config.js中的module配置中找到如下代码:
+    module: {
+        rules: [
+            {
+                test: /\.scss$/,
+                use: ['vue-style-loader', 'css-loader', 'sass-loader']
+            },
+        ]
+    },
+    然后修改代码将这段代码修改如下:
+    module: {
+        rules: [
+            {
+                test: /\.scss$/,
+                use: [
+                    'vue-style-loader',
+                    'css-loader',
+                    'sass-loader',
+                    {
+                        loader: 'sass-resources-loader',
+                        options: {
+                            resources: path.resolve(__dirname,'../src/renderer/assets/css/index.scss'),//改路径为存放sass全局变量的路径
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    b.直接向 node-sass 注入 index.scss
+    在 .electron-vue/webpack.renderer.config.js 里编辑 vue-loader 的配置:
+        {
+            test: /\.vue$/,
+            use: {
+                loader: 'vue-loader',
+                options: {
+                    extractCSS: process.env.NODE_ENV === 'production',
+                    loaders: {
+                        sass: 'vue-style-loader!css-loader!sass-loader?indentedSyntax=1',
+                        scss: 'vue-style-loader!css-loader!sass-loader?data=@import "./src/renderer/assets/css/index.scss";',
+                        less: 'vue-style-loader!css-loader!less-loader'
+                    }
+                }
+            }
+        },

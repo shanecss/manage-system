@@ -17,5 +17,5 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-    
+    .Login{ height: 100%; background: #ccc; }
 </style>
