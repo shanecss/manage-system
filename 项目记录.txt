@@ -1,0 +1,23 @@
+项目创建完成之后，我们就可以进行开发了
+1.引入elementUI
+    在项目根目录执行命令：npm i element-ui -S
+    在main.js中引入element:
+        import ElementUI from 'element-ui'
+        import 'element-ui/lib/theme-chalk/index.css'
+        Vue.use(ElementUI)
+2.关于样式
+    在assets下新建css文件夹用来存放样式文件：
+    common.scss //存放重置样式
+    element.scss //存放element框架里元素样式做修改
+    这样可能在项目一开始我们就要引入多个scss文件，可以在新建index.scss文件：
+        @import "./common";
+        @import "./element";
+        然后在main.js里引入index.scss文件就好（用这种方法减少了写在main.js中的引入文件数量）：
+            import './assets/css/index.scss'
+        由此引入的样式文件可在全局起作用
+    具体每个页面的样式可以写在每个页面.vue文件里，加上scoped表明样式只在当前页面起作用
+    <style scoped lang="scss">
+ 
+    </style>
+3.在vue中使用sass
+    
