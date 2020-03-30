@@ -19,9 +19,9 @@
     <style scoped lang="scss">
  
     </style>
-3.使用sass
-    a.不论是你使用的less或者sass都需要下载sass-resources-loader包,npm命令如下:npm install sass-resources-loader --save-dev
-    在.eleectron-vue/webpack.renderer.config.js中的module配置中找到如下代码:
+3.配置sass全局变量
+    不论是你使用的less或者sass都需要下载sass-resources-loader包,npm命令如下:npm install sass-resources-loader --save-dev
+    a.在.eleectron-vue/webpack.renderer.config.js中的module配置中找到如下代码:
     module: {
         rules: [
             {

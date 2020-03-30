@@ -1,6 +1,8 @@
 <template>
     <div class="Login">
-        {{msg}}
+        <div class="login_box">
+            
+        </div>
     </div>
 </template>
 <script>
@@ -17,5 +19,5 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-    .Login{ height: 100%; background: #ccc; }
+    .Login{ height: 100%; background: $login-bg; }
 </style>
