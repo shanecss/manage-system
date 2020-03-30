@@ -1,0 +1,28 @@
+.Login{ 
+    height: 100%; 
+    @include flex_layout(column); 
+    background: $login-bg; 
+}
+.login_box{ 
+    width:726px; 
+    height: 450px; 
+    border: 1px solid #ccc; 
+    background: $bg-white; 
+}
+.login_logo{
+    height: 94px;
+    background: #eff2f6;
+    line-height: 94px;
+    text-align: center;
+    font-size: $size30;
+}
+.login_inner{
+    @include flex_layout(row); 
+}
+.login_way01,.login_way02{
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}

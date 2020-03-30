@@ -17,7 +17,7 @@
         由此引入的样式文件可在全局起作用
     具体每个页面的样式可以写在每个页面.vue文件里，加上scoped表明样式只在当前页面起作用
     <style scoped lang="scss">
- 
+        @import "../assets/css/login.scss";  //引入方式
     </style>
 3.配置sass全局变量
     不论是你使用的less或者sass都需要下载sass-resources-loader包,npm命令如下:npm install sass-resources-loader --save-dev
