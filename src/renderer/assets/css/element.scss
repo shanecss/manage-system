@@ -1,3 +1,26 @@
 .login-ruleForm .el-form-item .el-input__icon{
     font-size: 18px;
 }
+.login_way02 .el-form .el-form-item{
+    margin-bottom: 22px;
+}
+.qWrapper .el-menu .el-menu-item{
+    line-height: 56px;
+    font-size: 16px;
+}
+.qWrapper .el-menu .el-menu-item i{
+    vertical-align:baseline;
+    color: #fff;
+}
+.qWrapper .el-menu .el-menu-item.is-active,
+.qWrapper .el-menu-item:focus{ 
+    color: #000 !important;
+    background: #f0f3f8 !important;
+}
+.qWrapper .el-menu-item:hover{
+    background: none !important;
+}
+.qWrapper .el-menu .el-menu-item.is-active i,
+.qWrapper .el-menu-item:focus i{
+    color: #000;
+}

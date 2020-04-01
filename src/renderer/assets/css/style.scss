@@ -1,0 +1,48 @@
+.Index{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.el-header{ 
+    @extend .flex_row;
+    @extend .index-logo;
+}
+.iInfo{
+    margin-right: 30px;
+    ul{
+        @include flex_layout(row);
+        li{
+            color: #fff; 
+            margin-left: 25px; 
+        }
+    }
+}
+.iInfo ul li.qExit:hover{ 
+    cursor: pointer; 
+    color: rgba(255,255,255,.8); 
+}
+.qWrapper{
+    display: flex; 
+    flex-direction: row;
+    height: 100%;
+    overflow: hidden;
+}
+.el-aside{ 
+    height: 100%;
+    background:#0553a1; 
+}
+.el-menu{ 
+    padding:20px 0; 
+    border-right: none; 
+    .el-menu-item{ 
+        text-align: left; 
+        margin-bottom: 1px; 
+    }
+}
+.qContainer{ 
+    height: 100%;
+    flex:1; 
+    background: $container-color;
+    padding: 25px;
+    overflow-y: scroll;
+}

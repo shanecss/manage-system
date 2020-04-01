@@ -116,4 +116,8 @@
             </div>
         </template>
     c.a标签可以跳转么？？可以跳转外部链接，不能路由跳转
-5.
+5.图片路径问题
+    <img src="" alt="" /> 采用相对路径就行
+    背景图片：background: url(~@/assets/images/bg.jpg) no-repeat;
+    至于前面为什么要加~@原因还不清楚
+6.

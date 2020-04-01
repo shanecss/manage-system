@@ -15,7 +15,16 @@ export default new Router({
     },{
         path: '/Index',
         name: 'Index',
-        component: require('@/components/Index').default
+        component: require('@/components/Index').default,
+        children:[{
+            path: '/serviceSystem',
+            name: 'serviceSystem',
+            component: require('@/components/serviceSystem').default
+        },{
+            path: '/otherSystem',
+            name: 'otherSystem',
+            component: require('@/components/otherSystem').default
+        }]
     },{
         path: '*',
         redirect: '/'

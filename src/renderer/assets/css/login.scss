@@ -1,19 +1,19 @@
 .Login{ 
     height: 100%; 
     @include flex_layout(column); 
-    background: $login-bg; 
+    background: url(~@/assets/images/bg.jpg) no-repeat; 
+    background-size: 100% 100%;
 }
 .login_box{ 
-    width:688px; 
+    width:648px; 
     height: 450px; 
     @extend .border01;
     background: $bg-white; 
 }
 .login_logo{
     height: 90px;
-    background: #eff2f6;
-    line-height: 90px;
-    text-align: center;
+    @extend .login-logo;
+    @include flex_layout(column);
     font-size: $size30;
 }
 .login_inner{
@@ -38,16 +38,18 @@
     }
 }
 .login_way02{
-    .remember { margin: 0px 0px 20px 0px;}
     .login_pass{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+        @extend .flex_row;
         p{
             cursor:pointer;
             &:hover{
-                color: #409EFF;
+                color: $hover-color;
             }
         }
+    }
+    .login_btn{
+        width:100%;
+        margin-bottom:22px;
+        margin-top:20px;
     }
 }

@@ -1,6 +1,22 @@
 // 颜色变量
-$login-bg:#F56C6C;
 $bg-white:#fff;
+$hover-color:#409EFF;
+$container-color:#f0f3f8;
 
 //字体变量
 $size30:30px;
+
+//渐变
+.login-logo{
+    background: -moz-linear-gradient(to right, #fff, #fafcfe, #cfe6f9);
+    background: -webkit-linear-gradient(to right, #fff, #fafcfe,#cfe6f9);
+    background: -o-linear-gradient(to right, #fff, #fafcfe,#cfe6f9);
+    background: -ms-linear-gradient(to right, #fff, #fafcfe,#cfe6f9);
+    background: linear-gradient(to right, #fff, #fafcfe,#cfe6f9);
+}
+.index-logo{
+    background: -webkit-linear-gradient(left, #007cf8, #0056ad, #0056ad); 
+    background: -o-linear-gradient(left, #007cf8, #0056ad, #0056ad);
+    background: -moz-linear-gradient(left, #007cf8, #0056ad, #0056ad);
+    background: linear-gradient(left, #007cf8, #0056ad, #0056ad);
+}

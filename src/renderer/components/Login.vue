@@ -1,7 +1,9 @@
 <template>
     <div class="Login">
         <div class="login_box">
-            <div class="login_logo">XXX管理服务平台</div>
+            <div class="login_logo">
+                <img src="../assets/images/logo.jpg" height="80" alt="">
+            </div>
             <div class="login_inner">
                 <!-- 扫描二维码 -->
                 <div class="login_way01">
@@ -25,7 +27,7 @@
                             <p @click="toFindPass">忘记密码?</p>
                         </div>
                         <el-form-item>
-                            <el-button type="primary" @click="submitForm('loginForm')" style="width:100%;margin-bottom:22px">登录</el-button>
+                            <el-button type="primary" class="login_btn" @click="submitForm('loginForm')">登录</el-button>
                         </el-form-item>
                     </el-form>
                 </div>
