@@ -65,3 +65,55 @@
                 }
             }
         },
+4.vue中跳转页面
+    a.router-link跳转
+        <!-- 直接跳转 -->
+        <router-link to='/testDemo'>
+            <button>点击跳转2</button>
+        </router-link>
+    
+        <!-- 带参数跳转 -->
+        <router-link :to="{path:'testDemo',query:{setid:123456}}">
+            <button>点击跳转1</button>
+        </router-link>
+    
+        <router-link :to="{name:'testDemo',params:{setid:1111222}}">
+            <button>点击跳转3</button>
+        </router-link>
+    b.this.$router.push()
+        <template>
+            <div id='test'>
+                <button @click='goTo()'>点击跳转4</button>
+            </div>
+        </template>
+        <script>
+            export default{
+                name:'test',
+                methods:{
+                    goTo(){
+                        //直接跳转
+                        this.$router.push('/testDemo');
+        
+                        //带参数跳转
+                        this.$router.push({path:'/testDemo',query:{setid:123456}});
+                        this.$router.push({name:'testDemo',params:{setid:111222}});
+                    }
+                }
+            }
+        </script>
+        params和query传参数有什么不一样？？在地址栏中可以看到，params传参数时，地址栏中看不到参数的内容，有点像ajax中的post传参，query传参数时，地址栏中可以看到传过来的参数信息，有点像ajax的个体传参
+        如果单独传setId一个参数的时候，地址栏中的地址如下：
+        第一种方式：path - query 传参：http://localhost:8080/#/test?setId=123456
+        第二种方式：name - params传参：http://localhost:8080/#/test
+        但是一般情况下，传参数是传递一个对象，当传递的是一个对象的时候，地址栏中的地址如下：
+        第一种方式：path - query 传参：http://localhost:8080/#/test?testData=%5Bobject%20Object%5D
+        第二种方式：name - params传参：http://localhost:8080/#/test
+        接收方怎么接收参数？？this.$route.query.serid和this.$route.params.setid，以下举一个接收的例子
+        注意接收参数时是 $route 不是 $router 
+        <template>
+            <div>
+                testDemo{{this.$route.query.setid}}
+            </div>
+        </template>
+    c.a标签可以跳转么？？可以跳转外部链接，不能路由跳转
+5.
