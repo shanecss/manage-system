@@ -17,16 +17,16 @@
             </div>
         </el-header>
         <!-- 标签页 -->
-        <el-tabs v-model="editableTabsValue" type="card" closable @edit="handleTabsEdit">
+        <!-- <el-tabs v-model="editableTabsValue" type="card" closable @edit="handleTabsEdit">
             <el-tab-pane
                 :key="item.name"
                 v-for="item in editableTabs"
                 :label="item.title"
                 :name="item.name">
             </el-tab-pane>
-        </el-tabs>
+        </el-tabs> -->
         <!-- 标签页 -->
-        <!-- <nav-Tabs></nav-Tabs> -->
+        <nav-Tabs></nav-Tabs>
     </div>
 </template>
 <script>

@@ -14,7 +14,7 @@
                         </el-cascader>
                         <el-menu
                             router 
-                            :default-active="this.$route.path"
+                            :default-active="$route.path"
                             background-color="#0553a1"
                             text-color="#ffffff"
                             active-text-color="#000000">
