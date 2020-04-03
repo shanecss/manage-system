@@ -1,21 +1,7 @@
 <template>
     <div class="Index">
         <!-- 头部组件 -->
-        <el-header height="70px" class="header">
-            <img src="../assets/images/logo-02.jpg" height="70" alt="">
-            <div class="iInfo">
-                <ul>
-                    <li>
-                        <i class="el-icon-user"></i>
-                        <span>管理员</span>
-                    </li>
-                    <li class="qExit">
-                        <i class="el-icon-switch-button"></i>
-                        <span @click="toLogin">安全退出</span>
-                    </li>
-                </ul>
-            </div>
-        </el-header>
+        <q-header></q-header>
         <div class="qWrapper">
             <!-- 侧边栏菜单组件 -->
             <el-aside class="aside" width="200px">
@@ -28,39 +14,37 @@
                         </el-cascader>
                         <el-menu
                             router 
-                            :default-active="$route.matched[0].path"
+                            :default-active="this.$route.path"
                             background-color="#0553a1"
                             text-color="#ffffff"
                             active-text-color="#000000">
-                            <el-menu-item index="/serviceSystem">
+                            <template v-for="(item,index) in navData">
+                            <el-menu-item :key=index :index="'/' + item.componentName">
                                 <i class="el-icon-s-home"></i>
-                                <span>公共服务系统</span>
+                                <span>{{item.name}}</span>
                             </el-menu-item>
-                            <el-menu-item index="/otherSystem">
-                                <i class="el-icon-user-solid"></i>
-                                <span>系统二</span>
-                            </el-menu-item>
+                            </template>
                         </el-menu>
                     </el-col>
                 </el-row>
             </el-aside>
             <!-- 主体内容组件 -->
             <div class="qContainer">
-                <!--其他跳转内页集合 有过渡效果-->
-                <transition name="custom-classes-transition" :enter-active-class="enterAnimate" :leave-active-class="leaveAnimate">
+                <keep-alive>
                     <router-view></router-view>
-                </transition>
+                </keep-alive>
             </div>
         </div>
     </div>
 </template>
 <script>
+import qHeader from '@/components/qHeader'
+import menu from '@/utils/nav-config.js'
 export default {
     name:'Index',
     data(){
         return{
-            "enterAnimate": "", //页面进入动效
-            "leaveAnimate": "", //页面离开动效
+            navData:menu,
             value: [],
             options: [{
                 value: 'company',
@@ -90,16 +74,44 @@ export default {
         }
     },
     methods:{
-        toLogin(){
-            this.$router.push({path:'/Login'});
-            //this.$router.back(-1);//返回上一层
-        },
         handleChange(value) {
             console.log(value);
         }
-    }
+    },
+    components:{
+  		qHeader
+  	}
 }
 </script>
 <style lang="scss" scoped>
-    @import "../assets/css/style.scss";  //引入方式
+    .Index{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .qWrapper{
+        display: flex; 
+        flex-direction: row;
+        height: 100%;
+        overflow: hidden;
+    }
+    .el-aside{ 
+        height: 100%;
+        background:#0553a1; 
+    }
+    .el-menu{ 
+        padding:20px 0; 
+        border-right: none; 
+        .el-menu-item{ 
+            text-align: left; 
+            margin-bottom: 1px; 
+        }
+    }
+    .qContainer{ 
+        height: 100%;
+        flex:1; 
+        background: $container-color;
+        padding: 25px;
+        overflow-y: scroll;
+    }
 </style>

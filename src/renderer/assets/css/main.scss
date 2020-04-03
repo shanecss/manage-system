@@ -26,3 +26,33 @@
 .border01{
     border:1px solid #ccc;
 }
+
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+.aside::-webkit-scrollbar,
+.qContainer::-webkit-scrollbar,
+.serviceSystem::-webkit-scrollbar
+{
+	width: 10px;
+	height: 10px;
+	background-color: #F5F5F5;
+}
+ 
+/*定义滚动条轨道 内阴影+圆角*/
+.aside::-webkit-scrollbar-track,
+.qContainer::-webkit-scrollbar-track,
+.serviceSystem::-webkit-scrollbar-track
+{
+	box-shadow: inset 0 0 6px rgba(141, 138, 138, 0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+ 
+/*定义滑块 内阴影+圆角*/
+.aside::-webkit-scrollbar-thumb,
+.qContainer::-webkit-scrollbar-thumb,
+.serviceSystem::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	box-shadow: inset 0 0 6px rgba(141, 138, 138, 0.3);
+	background-color: rgb(163, 159, 159);
+}
